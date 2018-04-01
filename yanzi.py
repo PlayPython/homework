@@ -9,3 +9,9 @@ def fun(n):
 	return a,b
 
 fun(20)
+
+def fun(m,n):
+	if m%n==0:
+		print("m能被n整除")
+	else:
+		print("m不能被n整除")
