@@ -10,3 +10,16 @@ with codecs.open('file.py', 'r', encoding='utf-8') as f:
     for line in f.readlines():
         if not line.strip().startswith("#"):
             print(line)
+
+
+def compare_files():
+    with codecs.open('file.py', 'r', encoding='utf-8') as f:
+        f1_lines = f.readlines()
+    with codecs.open('number.py', 'r', encoding='utf-8') as f:
+        f2_lines = f.readlines()
+    new_lines = list(zip(f1_lines, f2_lines))
+    print(new_lines)
+
+
+if __name__ == '__main__':
+    compare_files()
