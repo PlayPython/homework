@@ -134,10 +134,43 @@ def N_factorial(n):
 
 
 # - 判断一个数字是否为素数
-
+def judge_prime(num):
+    n1 = 0  # 被整除的个数初始化为0
+    m = 2
+    if num >= 2 and isinstance(num, int):
+        while m < num:
+            if num % m == 0:
+                n1 = 1
+                print(m)
+                break
+            else:
+                m = m + 1
+        if n1 == 1:
+            print('%s为非素数' % num)
+        elif n1 == 0:
+            print('%s为素数' % num)
+    else:
+        print('%s为非素数' % num)
 
 
 # - 统计一个文本中每个单词出现个数
+from collections import Counter
+
+
+def count_times(string):
+    l = string.split(" ")
+    l1 = []
+    for i in l:
+        if i != "":
+            l1.append(i)
+    c = Counter()
+    for ch in l1:
+        c[ch] = c[ch] + 1
+    print(c)
+
+
 if __name__ == "__main__":
     # compare(r'D:\123.txt', r'D:\1234.txt')
-    print(N_factorial(4))
+    # print(N_factorial(4))
+    # judge_prime(112321.2)
+    count_times("nihao  sad as  as ma ?")
