@@ -1,4 +1,5 @@
 # 字符串和列表
+#123
 import random
 
 class Str_and_list():
