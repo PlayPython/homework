@@ -12,6 +12,7 @@ print("=" * 20)
 for key in a_key:
     print(a[key])
 
+print("=" * 20)
 # create random numbers
 A_random_list = set([random.randrange(10) for i in range(10)])
 B_random_list = set([random.randrange(10) for i in range(10)])
