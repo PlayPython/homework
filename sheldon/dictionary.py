@@ -8,6 +8,7 @@ a = {'a': 1, 'A': 10, 'b': 2, 'c': 3, 'C': 30}
 a_key = a.keys()
 print(sorted(a_key))
 
+print("=" * 20)
 for key in a_key:
     print(a[key])
 
