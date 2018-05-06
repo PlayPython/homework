@@ -13,20 +13,29 @@ try_except_open()
 
 # 使用raise强制抛出异常，input()只接受正整数的输入,否则中断程序，强制抛出异常
 def raise_input():
-    num = int(input("请输入正整数："))
-    if num > 0:
-        print(num)
-    else:
+    try:
+        num = int(input("请输入正整数："))
+        if num > 0:
+            print(num)
+    except Exception:
         raise Exception("你输入的不是正整数")
 
 
-raise_input()
+#raise_input()
+
+
 # 函数练习
 # 定义一个函数，传入一个由数字组成列表，返回最大最小值
+def num_list():
+    nums = [2, 1, 4, 3, 5]
+    print(min(nums), max(nums))
+    return min(nums), max(nums)
 
 
+num_list()
 
 # 定义一个函数，参数可以接受不定参数和字典参数，打印传入的参数
+
 # 定义匿名函数，返回两数乘积
 # 写一个函数，返回N的阶乘
 # 把前面的一些练习题封装成一个个函数实现
