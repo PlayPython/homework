@@ -39,8 +39,7 @@
 - 导入自定义模块里面的函数，并使用
 - 安装requests并使用，引入时候给requests包使用别名。使用requests包调用github API获取返回值
   + github API https://developer.github.com/v3/
-- 定义一个类，同时具有堆栈的数据结构，实现四个方法
-  + shift() 返回并删除列表最后一个元素
+- 定义一个类，同时具有这样数据结构，实现四个方法
   + unshift() 添加列表第一个元素
   + push() 添加到列表最后一个元素
   + pop()  返回并删除列表最后一个元素
