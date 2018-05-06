@@ -14,8 +14,8 @@ def judge_plalindrome(string_para):
 def convert_numbers_to_letter(number_para):
     number = int(number_para)
     number_list_small = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven',
-                         'twelve', 'thirteen', 'fourtheen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
-    number_list_big = ['twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninty', ]
+                         'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
+    number_list_big = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninty', ]
     if number == 0:
         return 'zero'
     elif number > 0 and number < 20:
