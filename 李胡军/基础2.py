@@ -54,9 +54,9 @@ def func1(n):
 
 
 if __name__ == "__main__":
-    try_except_finally("./file1.txt")  # 文件存在
+    # try_except_finally("./file1.txt")  # 文件存在
     # try_except_finally('./file2.txt')  # 文件不存在
-    # raise_exception()
+    raise_exception()
     # print(fun1(1,2,"33","44",a1="a1"))
     # print(lmd(2,3))
     # print(func1(4))
