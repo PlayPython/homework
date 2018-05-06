@@ -169,8 +169,11 @@ def count_times(string):
     print(c)
 
 
+
+
+
 if __name__ == "__main__":
-    # compare(r'D:\123.txt', r'D:\1234.txt')
+    compare(r'D:\123.txt', r'D:\1234.txt')
     # print(N_factorial(4))
     # judge_prime(112321.2)
     count_times("nihao  sad as  as ma ?")
