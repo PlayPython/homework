@@ -253,13 +253,6 @@ def test_fun():
 
 test_fun()
 
-"""try:
-    print(aa)
-except NameError as ne:
-    print(ne)
-finally:
-    print("我必然会出现")
-"""
 
 # 函数练习
 # - 定义一个函数，传入一个由数字组成列表，返回最大最小值
