@@ -222,3 +222,41 @@ for a in range(len(list_sum//2)):
         print()
 
 """
+print("分割线----------------------")
+
+# 异常和错误练习
+# - 使用try-except处理文件打开异常，打开一个不存在的文件，打印提示信息，但是程序不中断
+"""
+with open('./text11.txt', 'r') as f:
+    f.write("孟友勇最帅")
+"""
+
+try:
+    file = open('./test1.txt', 'r')
+
+except IOError:
+    print("Error:没有找到文件")
+else:
+
+    print(file.read())
+    file.close()
+
+
+# - 使用raise强制抛出异常，input()只接受正整数的输入,否则中断程序，强制抛出异常
+def test_fun():
+    zs = input("请输入正整数：")
+    if float(zs) <= 0 or float(zs) % 1 != 0:
+        raise IOError("input()只接受正整数的输入")
+    else:
+        print("谢谢合作")
+
+
+test_fun()
+
+
+# 函数练习
+# - 定义一个函数，传入一个由数字组成列表，返回最大最小值
+# - 定义一个函数，参数可以接受不定参数和字典参数，打印传入的参数
+# - 定义匿名函数，返回两数乘积
+# - 写一个函数，返回N的阶乘
+# - 把前面的一些练习题封装成一个个函数实现
