@@ -42,7 +42,7 @@ if __name__ == '__main__':
     print(judge_exact_division(9, 4))
     print(sorted_n_list())
     print(judge_prime_number(2))
-    print(judge_prime_number(5))
+    print(judge_prime_number(9))
     print(judge_prime_number(99))
     print(judge_prime_number(100))
     print(judge_prime_number(97))

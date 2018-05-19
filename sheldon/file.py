@@ -6,7 +6,7 @@ import codecs
 
 
 def show_lines():
-    with codecs.open('file.py', 'r', encoding='utf-8') as f:
+    with codecs.open('string.py', 'r', encoding='utf-8') as f:
         for line in f.readlines():
             if not line.strip().startswith("#"):
                 print(line)
@@ -15,8 +15,10 @@ def show_lines():
 def compare_files():
     with codecs.open('file.py', 'r', encoding='utf-8') as f:
         f1_lines = f.readlines()
-    with codecs.open('string.py', 'r', encoding='utf-8') as f:
-        f2_lines = f.readlines()
+
+    with codecs.open('string.py','r',encoding='utf-8') as f:
+        f2_lines=f.readlines()
+
     if f1_lines != f2_lines:
         line_numbers = min(len(f1_lines), len(f2_lines))
         for i in range(0, line_numbers):

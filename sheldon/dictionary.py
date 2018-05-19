@@ -16,6 +16,8 @@ print("=" * 20)
 # create random numbers
 A_random_list = set([random.randrange(10) for i in range(10)])
 B_random_list = set([random.randrange(10) for i in range(10)])
+C_random_list=set([random.randrange(20) for i in range(9)])
+print((C_random_list))
 print(A_random_list, B_random_list)
 print(A_random_list & B_random_list)
 print(A_random_list | B_random_list)
