@@ -27,13 +27,15 @@ def regular_filetime(path):
         filepath=os.path.join(path,list[i])#将目录与文件名拼接起来
         if os.path.isfile(filepath):###判断拼接的目录是否是文件
             filelist.append(filepath)
+            #print(filepath)
     if len(filelist)==0:
         print("该目录下没有文件")
     else:
+        #print(filelist)
         for j in range(len(filelist)):
             #print(os.path.getmtime(filelist[j]))
             date = datetime.datetime.fromtimestamp(os.path.getmtime(filelist[j]))
-            print(list[i]+'最近修改时间为：'+date.strftime("%Y-%m-%d %H:%M:%S"))
+            print(filelist[j]+'最近修改时间为：'+date.strftime("%Y-%m-%d %H:%M:%S"))
 
 """
 迭代器
@@ -44,8 +46,8 @@ def  prime_number(n):  ###生成2到n的迭代器
     for i in range(1,n):
         yield a
         a=a+1
-#def filter_nu(a):
- #   return lambda x:x%a>0
+def filter_nu(a):
+    return lambda x:x%a>0
 """
 filter: 过滤符合条件的可迭代序列
         1.参数1: 函数 或 lambda表达式
@@ -56,7 +58,7 @@ def produce_prime_number(n):
     while True:
         c=next(b)
         yield c
-        b=filter(lambda b:b%c>0,b)  ###过滤取余大于0的数字
+        b=filter(filter_nu(c),b)  ###过滤取余大于0的数字
 
 #g=produce_prime_number(10)
 #g.__next__()
@@ -94,5 +96,5 @@ def threadfunc(n):
 if __name__ == "__main__":
     regular_blank("Mr hde")
     regular_dns("www.baidu.com")
-    regular_filetime("./")
-    threadfunc(10)
+    regular_filetime("c:")
+    threadfunc(30)
