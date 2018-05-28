@@ -61,11 +61,6 @@ filter: 过滤符合条件的可迭代序列
             yield c
             b=filter(slef.filter_nu(c),b)  ###过滤取余大于0的数字
 
-#g=produce_prime_number(10)
-#g.__next__()
-#for j in produce_prime_number(50):#100以内的质数
- #   print(j)
-
     """
  多线程
     """
@@ -93,7 +88,7 @@ def threadfunc(n):
     print ("over %s" % ctime())
 
 if __name__ == "__main__":
-    mod=multithread()
+    mod=multithread()   ###创建对象
     mod.regular_blank("Mr hde")
     mod.regular_dns("www.baidu.com")
     mod.regular_filetime("c:")
