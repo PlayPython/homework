@@ -1,43 +1,64 @@
-# f = open('text.txt', 'r')
+# def square(x):  # 计算平方数
+# 	return x ** 2
+#
+#
+# result = map(square, [1, 2, 3, 4, 5])  # 计算列表各个元素的平方
+# result1 = (map(lambda x: x ** 2, [1, 2, 3, 4, 5]))  # 使用 lambda 匿名函数
+# result2 = (map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10]))  # 提供了两个列表，对相同位置的列表数据进行相加
+# print(list(result))
+# print(list(result1))
+# print(list(result2))
+#
+#
+# def is_odd(n):
+# 	return n % 2 == 1
+#
+#
+# newlist = filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])  # 过滤奇数
+# print(list(newlist))
 
-# print(isinstance(1, int))
+# import os, datetime
+#
+# base_dir = 'c:/'
+# list = os.listdir(base_dir)  # 列出base_dir下的目录和文件
+# filelist = []
+# for i in range(0, len(list)):
+# 	path = os.path.join(base_dir, list[i])  # 连接目录与文件名或目录
+# 	if os.path.isfile(path):
+# 		filelist.append(list[i])
+#
+# for i in range(0, len(filelist)):
+# 	path = os.path.join(base_dir, filelist[i])
+# 	if os.path.isdir(path):
+# 		continue
+# 	timestamp = os.path.getmtime(path)
+# 	print(timestamp)
+# 	ts1 = os.stat(path).st_mtime
+# 	print(ts1)
+#
+# 	date = datetime.datetime.fromtimestamp(timestamp)
+# 	print(list[i], ' 最近修改时间是: ', date.strftime('%Y-%m-%d %H:%M:%S'))
 
-# num = input('shuru :')
-# print(type(num))
-# print(isinstance(int(num),int))
-# print(int(num))
+import math
 
-# def printme(str):
-# 	"打印任何传入的字符串"
-# 	print(str)
-# 	return
 
-# def printinfo(name, age = 24):
-# 	"打印任何传入的字符串"
-# 	print ("名字: ", name)
-# 	print ("年龄: ", age)
-# 	return
+def is_prime(n):
+	for i in range(2, int(math.sqrt(n)) + 1):
+		if n % i == 0:
+			return False
+	return True
 
-# def printinfo(arg1, *vartuple):
-# 	"打印任何传入的参数"
-# 	print ("输出: ")
-# 	print (arg1)
-# 	print (vartuple)
-# 	for var in vartuple:
-# 		print (var)
-# 	return
 
-# def printme(var):
-# 	print (var)
+primes = filter(is_prime, range(2, 100))
 
-# for i in range(1, 4.append(input(''))):
-# 	print(i)
-l = [i for i in range(1, 6)]
-l = l.pop()
-print(l)
-# if __name__ == '__main__':
 
-# printme(var = 5)
-# 调用printme函数
-# printme()
-#  printinfo('yangyang',1,1,1,1,1,1)
+print(list(primes))
+
+
+# def count(n):
+# 	while n > 0:
+# 		yield n  # 生成值：n
+# 		n -= 1
+#
+#
+# print(list(count(5)))
