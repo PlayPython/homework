@@ -108,6 +108,8 @@ class Cat(Pet):
 		print ('我的小猫的颜色', self.colour)
 
 
+
+
 if __name__ == '__main__':
 	# file('test.txt')
 	# rasie_error()
