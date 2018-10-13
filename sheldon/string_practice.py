@@ -18,9 +18,9 @@ def convert_numbers_to_letter(number_para):
     number_list_big = ['twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninty', ]
     if number == 0:
         return 'zero'
-    elif number > 0 and number < 20:
+    elif 0 < number < 20:
         return number_list_small[number - 1]
-    elif number >= 20 and number < 100:
+    elif 20 <= number < 100:
         if str(number)[1] == '0':
             return number_list_big[int(number / 10 - 2)]
         else:
@@ -31,6 +31,10 @@ def convert_numbers_to_letter(number_para):
         return 'one hundred'
     else:
         print("please enter the right number, 0 <= number <= 1000")
+
+
+def test_convert_numbers_to_letter():
+    assert convert_numbers_to_letter(100) == "one hundred"
 
 
 if __name__ == '__main__':
