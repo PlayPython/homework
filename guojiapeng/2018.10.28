@@ -1,0 +1,212 @@
+# -*- coding:utf-8 -*-
+
+# 数值类型练习
+# 使用循环和算数运算，生成0到20的偶数
+for x in range(0, 11):
+    print(2 * x)
+
+# 使用循环和算数运算，生成0到20的奇数
+for x in range(0, 10):
+    print(2 * x + 1)
+
+# 写一个函数，判断一个数是否被另外一个函数整除
+def num_mod(num1, num2):
+    if num2 == 0:
+        print('除数不能为0')
+    else:
+        mod = num1 % num2
+        if mod == 0:
+            print('%s可以被%s整除'% (num1, num2))
+        else:
+            print('%s不可以被%s整除'% (num1, num2))
+
+
+# 判断一个数字是否为素数
+def prime_num(num):
+    if type(num) is int and 1 < num <= 100000:
+        num_max = int(num ** 0.5)+1
+        num_min = 2
+        while num_min <= num_max:
+            mod = num % num_min
+            if num != num_min and mod == 0:
+                print('你输入的数字是：%s，该数字不是素数' % num)
+                break
+            elif num_min == num_max:
+                print('你输入的数字是：%s，该数字是素数' % num)
+            num_min += 1
+    else:
+        print('请输入1-100000的整数')
+
+
+'''生成一个有N个元素的由随机数n组成的列表，其中N和n的取值范围分别为（1 < N <= 100）
+    和（0 <= n <= 2 ** 31 - 1）。然后再随机从这个列表中取N（1 <= N <= 100）个'''
+import random
+def random_num(n_max):
+    numlist_input = []
+    numlist_output = []
+    num_start = 1
+    if 1 < n_max <= 100:
+        n_input_max = random.randint(2, n_max)
+        while num_start <= n_input_max:
+            numlist_input.append(random.randint(0, 2**31-1))
+            num_start += 1
+        num_start = 1
+        n_output_max = random.randint(2, n_input_max)
+        while num_start <= n_output_max:
+            list_num = random.randint(1, n_output_max)-1
+            list_add = numlist_input[list_num]
+            if list_add in numlist_output:
+                continue
+            else:
+                numlist_output.append(list_add)
+            num_start += 1
+        print(numlist_output)
+    else:
+        print('输入的数字范围应为(1,100]')
+
+
+# 随机数出来，对它们排序，然后显示这个子集。
+import random
+def sort_num(num):
+    n = 1
+    num_list =[]
+    while n <= num:
+        num_list.append(random.randint(0, 100))
+        n += 1
+    num_list.sort()
+    print(num_list)
+
+
+# 字符串和列表
+def word1(word):
+    # 创建一个函数，除去字符串前面和后面的空格
+    if type(word) is str:
+        print(word.strip())
+    else:
+        print('输入的内容应为字符串')
+
+
+# 输入一个字符串，判断是否为回文
+def word2(word):
+    if type(word) is str:
+        if word == word[::-1]:
+            print('该字符串为回文')
+        else:
+            print('该字符串不是回文')
+    else:
+        print('输入的内容应为字符串')
+
+
+# 给出一个整型值，能够返回该值得英文，例如输入89，返回eighty - nine，限定值在0~100
+def num_trans(num_input):
+    if type(num_input) is int and 0 <= num_input <= 100:
+        num_en = {0:'zero',1:'one',2:'two',3:'three',4:'four',5:'five',6:'six',7:'seven',
+                  8:'eight',9:'nine',10:'ten',11:'eleven',12:'twelve',13:'thirteen',
+                  14:'fourteen',15:'fifteen',16:'sixteen',17:'seventeen',18:'eighteen',
+                  19:'nineteen',20:'twenty',30:'thirty',40:'forty',50:'fifty',60:'sixty',
+                  70:'seventy',80:'eighty',90:'ninety',100:'one hundred'}
+        num = num_en.keys()
+        if num_input in num:
+            print(num_en.get(num))
+        else:
+            unit =num_input % 10
+            tenths = num_input - unit
+            print(num_en.get(tenths)+'-'+num_en.get(unit))
+    else:
+        print('请输入0-100的整数')
+
+
+ #################################################################################
+    # 给出两个可以识别格式的日期，比如MM / DD / YY或者 DD / MM / YY计算两个日期的相隔天数
+import re
+def date_day(date1, date2):
+    global check_value
+    check_value = True
+    month_day = {1:31,2:28,3:31,4:30,5:31,6:30,7:31,8:31,9:30,10:31,11:30,12:31,}
+    sum_day = 0
+    date1_list = _date_check(date1)
+    date2_list = _date_check(date2)
+    if check_value is True:
+        if date1_list[0] > date2_list[0]:
+            date1_list, date2_list = date2_list, date1_list
+        while date1_list[0] < date2_list[0]:
+            while int(date1_list[1]) <= 12:
+                sum_day += month_day.get(date1_list[1])-date1_list[2]
+                if date1_list[1]==2:
+                    if (date1_list[0]%4==0 and date1_list[0]%100!=0) or (date1_list[0]%400==0):
+                        sum_day += 1
+                date1_list[1] += 1
+                date1_list[2] = 0
+            date1_list[0] += 1
+            date1_list[1] = 1
+        while date1_list[1] < date2_list[1]:
+            sum_day += month_day.get(date1_list[1])-date1_list[2]
+            if date1_list[1]==2:
+                if (date1_list[0]%4==0 and date1_list[0]%100!=0) or (date1_list[0]%400==0):
+                    sum_day += 1
+            date1_list[1] += 1
+        sum_day += (date2_list[2] - date1_list[2])
+        print('%s与%s相差天数为：%s天' % (date1,date2,sum_day))
+
+def _date_check(date):
+    # 校验日期格式及内容是否正确，并返回一个年月日的数组
+    global check_value
+    if type(date) is str and len(date) == 10 and re.search(r'\d{4}/\d{2}/\d{2}',date):
+        year = int(date.split('/')[0])
+        month = int(date.split('/')[1])
+        day = int(date.split('/')[2])
+        if month in (1,3,5,7,8,10,12):
+            if  day < 1 or day > 31:
+                print('%s的日期应不大于31'% date)
+                check_value = False
+        elif month == 2:
+            if (year%4==0 and year%100!=0) or (year%400==0):
+                if day < 1 or day > 29:
+                    print('%s是闰年，2月日期应不大于29'% date)
+                    check_value = False
+            else:
+                if day < 1 or day > 28:
+                    print('%s不是闰年，2月日期应不大于28'% date)
+                    check_value = False
+        elif month in (4,6,9,11):
+            if day < 1 or day > 30:
+                print('%s的日期应不大于30' % date)
+                check_value = False
+        else:
+            print('%s输入的月份应在01-12之间' %date)
+            check_value = False
+    else:
+        print('你输入的"%s"格式不正确，请输入正确的日期格式"YYYY/MM/DD"' % date)
+        check_value = False
+    return [year,month,day]
+
+
+
+
+
+# 字典和集合练习
+# 创建一个字典，把字典中的键按照字母顺序显示出来
+# 根据已经排序好的字母的键，显示这个字典中的键和值
+dic1 = {'bob':12,'angela':5,'hank':22,'vanda':24}
+dic1_keylist=sorted(dic1.keys())
+num=0
+print(dic1_keylist)
+while num < len(dic1_keylist):
+    print('%s:%d' % (dic1_keylist[num], dic1[dic1_keylist[num]]))
+    num += 1
+
+# 使用随机数模块生成一个随机数集合A和B，每个集合是0到9的随机数集合。生成之后显示结果A | B和A & B
+import random
+def set_random(num):
+    set_start=set()
+    n=1
+    while n <= num:
+        set_start.add(random.randint(1,20))
+        n += 1
+    return set_start
+A = set_random(random.randint(1,20))
+B = set_random(random.randint(1,20))
+print('集合A：%s'%A)
+print('集合B：%s'%B)
+print('集合A\B并集为：%s' % (A|B))
+print('集合A\B交集为：%s' % (A&B))
