@@ -2,7 +2,7 @@
 - 安装docker到本地环境
 - Docker pull ubuntu:16.04  #从官方下载ubuntu镜像到本地
 - Docker images                 #查看本地镜像文件
-- docker rmi  image_name  删除镜像
+- docker rmi  image_name   #删除镜像
 
 # 容器练习
 - 启动容器
