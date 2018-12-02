@@ -9,7 +9,7 @@
 - 查看容器
 - 命令行交互方式进入容器
 - 停止一个容器
-= 删除一个容器
+- 删除一个容器
 
 # DOCKERFILE 练习
 - Docker build -t web-app:latest .   #根据当前文件夹下面的dockerfile创建镜像文件
