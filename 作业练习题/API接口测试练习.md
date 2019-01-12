@@ -5,6 +5,9 @@
 - 使用postman生成测试代码
 - 使用newman运行postman脚本
 
+# requests 练习
+- 使用requests包发送get/post 请求并验证结果
+
 # httprunner练习
 - 使用httprunner生成json或者yaml格式case
 - 优化并运行case
