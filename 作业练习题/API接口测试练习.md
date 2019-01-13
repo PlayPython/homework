@@ -1,12 +1,13 @@
 # API 工具练习
-- 用任意一个命令行工具（curl，httpie...）发送API请求
+- 用任意一个命令行工具（curl，httpie...）发送API请求,包括get，post请求
 - 学会用浏览器分析API请求
-- 使用postman发送API请求并验证结果
-- 使用postman生成测试代码
+- 使用postman发送API请求并添加验证结果
+- 使用postman生成python测试代码
 - 使用newman运行postman脚本
 
 # requests 练习
 - 使用requests包发送get/post 请求并验证结果
+- 使用requests包获取token，作为变量传给下一个请求
 
 # httprunner练习
 - 使用httprunner生成json或者yaml格式case
