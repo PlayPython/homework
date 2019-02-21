@@ -1,0 +1,37 @@
+-   config:
+        name: APITest
+        request:
+            base_url: ''
+            headers:
+                User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X)
+                    AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372
+                    Safari/604.1
+        variables: []
+-   test:
+        name: 请求赛事列表
+        request:
+            method: GET
+            url: 'http://match.api.cpyouxuan.com/api/data?key=312581&current_page=1&match_date=20190116&req=reqh5&tag_from=200&_=1548040977193'
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - content.flag
+            - 1
+            eq:
+            - content.type
+            - json
+
+-   test:
+        name: 登录
+        request:
+            method: POST
+            url: 'http://192.168.100.80/phone/phone_pwd_login?lg_session_id=8aad8ded-43f8-465a-a660-11a5e1f5c123&scope=token_scope%2Cuser_info_scope&platform_id=10003&response_type=code&redirect_uri=http%3A%2F%2F192.168.100.80%3A10027%2Fcallback%3FBEE_SESSION_ID%3Db12b8bac-606f-463c-94eb-7764f96830b4%26back_url%3Dhttp%253A%252F%252F192.168.100.80%253A10013%252Fandroid_asset%252Fwww%252Fnewmicai%252Fuser%252Fuser_center_index.html%253F_%253D1548040968722&time=1548040977193&app_id=10005&out_login_type=XIAOMI%2CTENCENTQQ%2CWEIXIN'
+        validate:
+        -   eq:
+            - status_code
+            - 200
+        -   eq:
+            - content.flag
+            - 1
