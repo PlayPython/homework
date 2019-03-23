@@ -25,8 +25,13 @@
 - https://cloud.docker.com 注册账号
 - Docker login/logout 登录/退出
 
-# 自动化测试练习
+# 自动化测试综合练习
+- 编译自己的自动化镜像文件
+- 启动有UI环境的镜像文件
+- 编写一个简单的自动化脚本
 - 在容器里面跑一个自动化脚本
+- 通过selenium grid 方法在容器里面运行脚本
+- 启动多个容器，并行运行UI自动化脚本
 
 # docker-compose练习
 - 练习docker-compose命令
