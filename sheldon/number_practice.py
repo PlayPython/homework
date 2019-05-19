@@ -1,8 +1,8 @@
-'''
+"""
 @author Sheldon Yan
 :copyright: (c) 2018 by Sheldon
 :license: Apache 2.0, see LICENSE for more details.
-'''
+"""
 import math
 # 使用循环和算数运算，生成0到20的偶数
 # - 使用循环和算数运算，生成0到20的奇数
